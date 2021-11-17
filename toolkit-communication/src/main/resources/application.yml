@@ -1,0 +1,6 @@
+spring:
+  mail:
+    host: smtpdm.aliyun.com
+    port: 80
+    username: javatest@edm.vision-iot.co
+    password: A1B2C3d4e5
