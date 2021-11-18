@@ -43,7 +43,7 @@ public class EmailUtil {
     private static final String EMAIL_USERNAME = "test@gmail.com";
 
     /**
-     * 发送邮件（建议使用场景：给单人发送一封自定义标题和内容的邮件）
+     * 发送邮件（建议使用场景：给单人发送一封自定义内容和标题的邮件）
      *
      * @param receivingAddress 收件人邮件地址（单个）
      * @param emailContent     发送邮件内容（文本）
@@ -56,7 +56,7 @@ public class EmailUtil {
     }
 
     /**
-     * 发送邮件（建议使用场景：给多人发送一封自定义标题和内容相同的邮件）
+     * 发送邮件（建议使用场景：给多人发送一封自定义内容和标题都相同的邮件）
      *
      * @param receivingAddresses 收件人邮件地址（多个）
      * @param emailContent       发送邮件内容（文本）
@@ -80,7 +80,7 @@ public class EmailUtil {
     }
 
     /**
-     * 发送邮件（建议使用场景：给多人发送多封自定义标题和内容的邮件）
+     * 发送邮件（建议使用场景：给多人发送多封自定义标题和内容相同的邮件）
      *
      * @param receivingAddressesAndEmailTitle 收件人邮件地址和发送邮件标题一一对应的map集合
      * @param emailContent                    发送邮件的内容
@@ -91,9 +91,7 @@ public class EmailUtil {
             return;
         }
 
-        receivingAddressesAndEmailTitle.forEach((receivingAddresses, emailTitle) -> {
-            sendMail(receivingAddresses, emailContent, emailTitle);
-        });
+        receivingAddressesAndEmailTitle.forEach((receivingAddresses, emailTitle) -> sendMail(receivingAddresses, emailContent, emailTitle));
     }
 
     /**
